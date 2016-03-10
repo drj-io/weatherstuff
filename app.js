@@ -19,7 +19,7 @@ app.post('/process_the_form', function(req,res){
 
     sendmail({
         from: req.body.email,
-        to: 'david.jones@madwiremedia.com',
+        to: 'david@???.com',
         subject: 'New contact form submission from '+ req.body.name,
         content: req.body.comment,
       }, function(err, reply) {
