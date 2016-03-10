@@ -1,0 +1,22 @@
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+
+<h1>Hi! The weather in moscow is <span id="weatherInfo"></span></h1>
+
+
+
+<script>
+$.ajax({
+    url: "/get_the_weather_from_the_api_please",
+    context: document.body
+  }).done(function(data) {
+
+    //console.log();
+
+    $("#weatherInfo").html(data.list[0].weather[0].description);
+
+  });
+
+
+
+</script>

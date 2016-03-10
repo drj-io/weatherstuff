@@ -7,6 +7,14 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 
+app.get('/get_the_weather_from_the_api_please', function(req,res){
+  request('http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=cb5a9ed44f1d8c2013040f360b9e200d', function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      res.send(body)
+    }
+  });
+})
+
 
 app.get('/', function (req, res){
   request('http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=cb5a9ed44f1d8c2013040f360b9e200d', function (error, response, body) {
