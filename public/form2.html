@@ -1,0 +1,19 @@
+
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+
+<form>
+  <input id="textfieldname" name="name" placeholder="Please put in your name!">
+  <button id="button">Click!</button>
+</form>
+
+
+<script>
+  $("#button").click(function(e){
+
+    e.preventDefault();
+    alert('hello, ' + $("#textfieldname").val())
+
+  })
+
+</script>
