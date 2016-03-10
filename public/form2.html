@@ -2,18 +2,12 @@
 <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 
 
-<form>
+<form method="POST" action="process_the_form">
+  <h2>name</h2>
   <input id="textfieldname" name="name" placeholder="Please put in your name!">
-  <button id="button">Click!</button>
+  <h2>email</h2>
+  <input name="email" type="email">
+  <h2>comment</h2>
+  <textarea name="comment"></textarea>
+  <input type="submit" value="go">
 </form>
-
-
-<script>
-  $("#button").click(function(e){
-
-    e.preventDefault();
-    alert('hello, ' + $("#textfieldname").val())
-
-  })
-
-</script>

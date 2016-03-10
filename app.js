@@ -5,7 +5,20 @@ var ejs = require('ejs');
 var request = require('request');
 app.set('view engine', 'ejs');
 
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static('public'));
+
+
+app.post('/process_the_form', function(req,res){
+
+  console.log(req.body);
+
+
+  res.send('user sent a POST request.  What do we doooooo?')
+})
 
 app.get('/get_the_weather_from_the_api_please', function(req,res){
   request('http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=cb5a9ed44f1d8c2013040f360b9e200d', function (error, response, body) {
