@@ -1,0 +1,24 @@
+{
+  "name": "weatherstuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drj-io/weatherstuff.git"
+  },
+  "author": "David Jones <null@rackfx.com> (rackfx.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drj-io/weatherstuff/issues"
+  },
+  "homepage": "https://github.com/drj-io/weatherstuff",
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "request": "^2.69.0"
+  }
+}
