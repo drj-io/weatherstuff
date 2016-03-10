@@ -7,26 +7,40 @@ fruits.forEach(function(element, index){
 
 
 
-displayThing(1, fruits);
+// displayThing(1, fruits);
+//
+// displayThing(1, fruits2);
+//
+// displayThing(1, "this is a string");
+//
+// displayThing(1, 500);
+//
+// displayThing(1, { name: "david", age: 92 });
 
-displayThing(1, fruits2);
+// displayThing(1, function(){  console.log('hey!  i ran!')    })
 
-displayThing(1, "this is a string");
+foo (1);
 
-displayThing(1, 500);
+function foo(a){
+  var b = a + 1;
+  console.log(b);
 
-displayThing(1, { name: "david", age: 92 });
+}
+displayThing(function(){ console.log('i ran')} , fruits);
 
-displayThing(1, function(){  console.log('hey!  i ran!')    })
+console.log('hey... I am done!   let us go to the bar');
 
 
 function displayThing(cb, thing){
+  console.log("Hey, I'm about to run the callback...");
 
-  console.log(thing);
+  setTimeout(function(){
+    cb();
+  }, 3000);
 
 
-
-
+  // console.log(cb);
+  // console.log(thing);
 
 
 }
