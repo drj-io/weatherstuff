@@ -4,6 +4,9 @@ var app = express();
 var ejs = require('ejs');
 var request = require('request');
 var sendmail = require('sendmail')();
+var port = process.env.PORT || 8080;
+
+
 app.set('view engine', 'ejs');
 
 var bodyParser = require('body-parser');
@@ -70,6 +73,6 @@ app.get('/', function (req, res){
 
 });
 
-app.listen(3000, function () {
-  console.log('App listening on port 3000!');
+app.listen(port, function () {
+  console.log('App listening on port '+port+'!');
 });
