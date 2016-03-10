@@ -26,7 +26,7 @@ function foo(a){
   console.log(b);
 
 }
-displayThing(function(){ console.log('i ran')} , fruits);
+displayThing(function(x){ console.log('i ran, the secret number is '+ x)} , fruits);
 
 console.log('hey... I am done!   let us go to the bar');
 
@@ -35,7 +35,8 @@ function displayThing(cb, thing){
   console.log("Hey, I'm about to run the callback...");
 
   setTimeout(function(){
-    cb();
+    var x = 1;
+    cb(x);
   }, 3000);
 
 

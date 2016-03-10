@@ -1,0 +1,22 @@
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+
+<h1>Hi! The weather in moscow is <span id="weatherInfo"></span></h1>
+
+
+
+<script>
+$.ajax({
+    url: "http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID=cb5a9ed44f1d8c2013040f360b9e200d",
+    context: document.body
+  }).done(function(data) {
+
+    //console.log();
+
+    $("#weatherInfo").html(data.list[0].weather[0].description);
+
+  });
+
+
+
+</script>
