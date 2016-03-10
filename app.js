@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var ejs = require('ejs');
 var request = require('request');
+var sendmail = require('sendmail')();
 app.set('view engine', 'ejs');
 
 var bodyParser = require('body-parser');
@@ -14,10 +15,33 @@ app.use(express.static('public'));
 
 app.post('/process_the_form', function(req,res){
 
+
+
+    sendmail({
+        from: req.body.email,
+        to: 'david.jones@madwiremedia.com',
+        subject: 'New contact form submission from '+ req.body.name,
+        content: req.body.comment,
+      }, function(err, reply) {
+
+        if(err){
+          res.send('there was an error');
+          console.log('hey there was error!!!!!!!', err)
+
+        }
+        else {
+          res.send('YOUR FORM WAS SUBMITTED, THANKS')
+
+        }
+        //console.log(err && err.stack);
+        //console.dir(reply);
+    });
+
+
   console.log(req.body);
 
 
-  res.send('user sent a POST request.  What do we doooooo?')
+
 })
 
 app.get('/get_the_weather_from_the_api_please', function(req,res){
